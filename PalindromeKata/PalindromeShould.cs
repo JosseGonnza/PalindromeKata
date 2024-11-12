@@ -7,9 +7,7 @@ public class PalindromeShould
     [Fact(DisplayName = "be false when contains less than 2 characters")]
     public void be_false_when_contains_less_than_2_characters()
     {
-        var palindromo = "a";
-
-        var result = IsPalindrome(palindromo);
+        var result = IsPalindrome("a");
 
         result.Should().BeFalse();
     }
@@ -17,9 +15,7 @@ public class PalindromeShould
     [Fact(DisplayName = "be true when contains more than 2 characters")]
     public void be_true_when_contains_more_than_2_characters()
     {
-        var palindromo = "aa";
-
-        var result = IsPalindrome(palindromo);
+        var result = IsPalindrome("aa");
 
         result.Should().BeTrue();
     }
@@ -27,9 +23,7 @@ public class PalindromeShould
     [Fact(DisplayName = "be false when word is not a palindrome")]
     public void be_false_when_word_is_not_a_palindrome()
     {
-        var palindromo = "nopalindrome";
-
-        var result = IsPalindrome(palindromo);
+        var result = IsPalindrome("nopalindrome");
 
         result.Should().BeFalse();
     }
