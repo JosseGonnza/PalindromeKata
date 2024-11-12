@@ -39,10 +39,13 @@ public class PalindromeShould
         result.Should().BeTrue();
     }
     
-    [Fact(DisplayName = "be ignore upper and lower case letter")]
-    public void be_ignore_upper_and_lower_case_letter()
+    [Theory(DisplayName = "be ignore upper and lower case letter")]
+    [InlineData("Ana")]
+    [InlineData("Oro")]
+    [InlineData("Reconocer")]
+    public void be_ignore_upper_and_lower_case_letter(string palindrome)
     {
-        var result = IsPalindrome("Ana");
+        var result = IsPalindrome(palindrome);
 
         result.Should().BeTrue();
     }
@@ -55,10 +58,6 @@ public class PalindromeShould
         {
             reverse += lowerPalindrome[i];
         }
-        if (palindromo.Length >= 2 && reverse == lowerPalindrome)
-        {
-            return true;
-        }
-        return false;
+        return palindromo.Length >= 2 && reverse == lowerPalindrome;
     }
 }
