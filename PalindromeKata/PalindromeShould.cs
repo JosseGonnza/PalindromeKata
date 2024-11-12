@@ -26,6 +26,10 @@ public class PalindromeShould
 
     private static bool IsPalindrome(string palindromo)
     {
+        if (palindromo.Length >= 2)
+        {
+            return true;
+        }
         return false;
     }
 }
