@@ -13,6 +13,16 @@ public class PalindromeShould
 
         result.Should().BeFalse();
     }
+    
+    [Fact(DisplayName = "be true when contains more than 2 characters")]
+    public void be_true_when_contains_more_than_2_characters()
+    {
+        var palindromo = "aa";
+
+        var result = IsPalindrome(palindromo);
+
+        result.Should().BeTrue();
+    }
 
     private static bool IsPalindrome(string palindromo)
     {
