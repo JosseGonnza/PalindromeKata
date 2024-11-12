@@ -38,8 +38,15 @@ public class PalindromeShould
 
         result.Should().BeTrue();
     }
+    
+    [Fact(DisplayName = "be ignore upper and lower case letter")]
+    public void be_ignore_upper_and_lower_case_letter()
+    {
+        var result = IsPalindrome("Ana");
 
-
+        result.Should().BeTrue();
+    }
+    
     private static bool IsPalindrome(string palindromo)
     {
         var reverse = "";
