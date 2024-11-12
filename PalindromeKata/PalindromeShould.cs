@@ -33,6 +33,18 @@ public class PalindromeShould
 
         result.Should().BeFalse();
     }
+    
+    [Theory(DisplayName = "be true when word is a palindrome")]
+    [InlineData("ana")]
+    [InlineData("oro")]
+    [InlineData("reconocer")]
+    public void be_true_when_word_is_a_palindrome(string palindrome)
+    {
+        var result = IsPalindrome(palindrome);
+
+        result.Should().BeTrue();
+    }
+
 
     private static bool IsPalindrome(string palindromo)
     {
