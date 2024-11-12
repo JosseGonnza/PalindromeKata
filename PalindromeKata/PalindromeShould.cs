@@ -23,6 +23,16 @@ public class PalindromeShould
 
         result.Should().BeTrue();
     }
+    
+    [Fact(DisplayName = "be false when word is not a palindrome")]
+    public void be_false_when_word_is_not_a_palindrome()
+    {
+        var palindromo = "nopalindrome";
+
+        var result = IsPalindrome(palindromo);
+
+        result.Should().BeFalse();
+    }
 
     private static bool IsPalindrome(string palindromo)
     {
