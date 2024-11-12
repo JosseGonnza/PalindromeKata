@@ -36,7 +36,12 @@ public class PalindromeShould
 
     private static bool IsPalindrome(string palindromo)
     {
-        if (palindromo.Length >= 2)
+        var reverse = "";
+        for (int i = (palindromo.ToCharArray().Length - 1); i >= 0; i--)
+        {
+            reverse += palindromo[i];
+        }
+        if (palindromo.Length >= 2 && reverse == palindromo)
         {
             return true;
         }
